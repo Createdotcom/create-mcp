@@ -1,0 +1,15 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "create",
+  "version": "0.1.0",
+  "description": "Deploy apps and run your online store on Create.com: projects, deploys, domains, secrets, products, stock, orders and draft orders.",
+  "author": {
+    "name": "Create.com",
+    "email": "support@create.com",
+    "url": "https://www.create.com"
+  },
+  "homepage": "https://www.create.com",
+  "repository": "https://github.com/createdotcom/create-mcp",
+  "license": "Apache-2.0",
+  "keywords": ["create", "hosting", "deployment", "ecommerce", "store", "inventory", "orders", "mcp"]
+}
