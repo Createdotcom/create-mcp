@@ -33,11 +33,11 @@ Registry names: `com.create/apps`, `com.create/commerce` ([MCP Registry](https:/
 The remote servers take files, an uploaded tarball or a Git repository. To let a coding agent push the folder it is working in — building on your machine when needed — run the CLI's local MCP server instead:
 
 ```bash
-claude mcp add create -- npx -y @createdotcom/cli mcp --local-builds   # Claude Code
-codex mcp add create -- npx -y @createdotcom/cli mcp --local-builds    # Codex
+claude mcp add create -- npx -y @create.com/cli mcp --local-builds   # Claude Code
+codex mcp add create -- npx -y @create.com/cli mcp --local-builds    # Codex
 ```
 
-Then ask: "push this to Create". Sign in once with `npx @createdotcom/cli login`.
+Then ask: "push this to Create". Sign in once with `npx @create.com/cli login`.
 
 ### ChatGPT
 
