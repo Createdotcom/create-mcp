@@ -1,0 +1,48 @@
+{
+  "name": "@create.com/cli",
+  "version": "0.1.1",
+  "description": "Deploy apps to Create from the terminal, or give your AI agent Create's tools with a local MCP server (create mcp).",
+  "license": "Apache-2.0",
+  "homepage": "https://www.create.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Createdotcom/create-mcp.git"
+  },
+  "keywords": [
+    "create",
+    "cli",
+    "deploy",
+    "hosting",
+    "mcp",
+    "model-context-protocol",
+    "ai-agents"
+  ],
+  "type": "module",
+  "bin": {
+    "create": "dist/bin.js"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      "./package.json": "./package.json"
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "@create/apps-mcp": "workspace:*",
+    "esbuild": "0.28.2"
+  }
+}

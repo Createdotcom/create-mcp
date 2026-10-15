@@ -1,0 +1,15 @@
+{
+  "name": "@create/shared",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./apps-images": "./src/apps-images.ts",
+    "./legal": "./src/legal.ts"
+  },
+  "dependencies": {
+    "parse5": "7.3.0",
+    "zod": "^4.5.4"
+  }
+}
