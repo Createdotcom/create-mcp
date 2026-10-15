@@ -47,7 +47,7 @@ export type CliIo = {
   interactive?: boolean;
 };
 
-export const VERSION = '0.1.1';
+export const VERSION = '0.1.2';
 
 const HELP = `create — deploy apps to Create
 

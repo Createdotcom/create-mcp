@@ -14,11 +14,16 @@ const FILE_RULES: { test: (name: string, path: string) => boolean; reason: strin
   { test: (name) => /\.(pem|key|p12|pfx)$/i.test(name), reason: 'private key or certificate bundle' },
   { test: (name) => /^id_(rsa|dsa|ecdsa|ed25519)(\.|$)/.test(name) && !name.endsWith('.pub'), reason: 'SSH private key' },
   { test: (name) => name === '.npmrc' || name === '.pypirc' || name === '.netrc' || name === '_netrc', reason: 'package-registry or login credentials' },
-  { test: (name) => name === 'credentials.json', reason: 'credentials file' },
+  { test: (name) => name === 'credentials.json' || name === 'application_default_credentials.json', reason: 'credentials file' },
+  { test: (name) => /\.(jks|keystore|p8|ppk)$/i.test(name), reason: 'private key or keystore' },
+  { test: (name) => name === '.git-credentials', reason: 'Git credentials (stored passwords and tokens)' },
+  { test: (name) => name === '.htpasswd', reason: 'password file' },
+  { test: (name) => /\.tfstate(\.backup)?$/.test(name) || name === '.terraformrc' || name === 'terraform.rc', reason: 'Terraform state or credentials (holds secrets in plain text)' },
+  { test: (_name, path) => /(^|\/)\.docker\/config\.json$/.test(path), reason: 'Docker registry credentials' },
 ];
 
 /** Directories whose whole content is credentials. */
-const SECRET_DIRS: Record<string, string> = { '.aws': 'AWS credentials folder', '.ssh': 'SSH keys folder', '.gnupg': 'GnuPG keys folder' };
+const SECRET_DIRS: Record<string, string> = { '.aws': 'AWS credentials folder', '.ssh': 'SSH keys folder', '.gnupg': 'GnuPG keys folder', '.kube': 'Kubernetes credentials folder' };
 
 export const SECRET_FILE_FIX = 'Set secret values with `create env set KEY --secret` (or set_variables with secret: true) instead of deploying the file. To deploy this exact file anyway, pass --allow-secret-file <path>.';
 
